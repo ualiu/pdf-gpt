@@ -18,9 +18,9 @@ with st.sidebar:
         st.write('Created by Urim Aliu')
         st.markdown('''
         ## How to use this app
-        1. Upload a pdf, docx, or txt file
-        2. Enter your OpenAI API key below
-        3. Using natural language, ask a question about your document
+        1. Upload a pdf, docx, or txt file 📄
+        2. Enter your [OpenAI API key](https://platform.openai.com/account/api-keys) 🔑
+        3. Using natural language, ask a question about your document 💬
         
         ## FAQ
 
@@ -49,7 +49,7 @@ def main():
 
     if pdf is not None:
         # Ask the user for the API key
-        api_key = st.text_input('Enter your API key', type='password')
+        api_key = st.text_input('Enter your API key (sk-...).', type='password')
 
         # Set the API key as an environment variable
         os.environ["OPENAI_API_KEY"] = api_key
@@ -91,7 +91,7 @@ def main():
                     print(cb)
                 st.write(response)
         else:
-            st.write("Please enter your API key to use the app.")
+            st.write("Please enter your API key to use the app.\n You can get your API key from https://platform.openai.com/account/api-keys.")
  
 if __name__ == '__main__':
     main()
